@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			body {
+				margin: 0;
+				font-family: Arial, sans-serif;
+				background: linear-gradient(135deg, #74abe2, #5563de);
+				color: #333;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+
+			/* Stile per il form di login */
+			#loginForm {
+				background: rgba(255, 255, 255, 0.9);
+				padding: 20px 30px;
+				border-radius: 10px;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			/* Stile per l'interfaccia della chiamata */
+			#callInterface {
+				background: rgba(255, 255, 255, 0.95);
+				padding: 20px 30px;
+				border-radius: 10px;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			/* Stile per input e pulsanti */
+			input[type='text'],
+			input[type='password'] {
+				width: 250px;
+				padding: 10px;
+				margin: 10px 0;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+			}
+
+			button {
+				padding: 10px 20px;
+				background-color: #5563de;
+				color: #fff;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: background-color 0.3s ease;
+				margin-top: 10px;
+			}
+
+			button:hover {
+				background-color: #4453c2;
+			}
+
+			/* Stile per l'header dell'interfaccia chiamata */
+			#callInterface h2 {
+				margin-bottom: 20px;
+			}
+
+			/* Stile per il container dei video */
+			#video {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-top: 20px;
+				width: 90%;
+				justify-content: center;
+			}
+
+			/* Stile per ciascun video container */
+			#video > div {
+				position: relative;
+			}
+
+			/* Stile per i video */
+			#video video {
+				width: 300px;
+				border-radius: 10px;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			}
+
+			/* Etichetta del nome utente sul video */
+			#video > div > div {
+				position: absolute;
+				bottom: 5px;
+				left: 5px;
+				background: rgba(0, 0, 0, 0.5);
+				color: #fff;
+				padding: 2px 5px;
+				border-radius: 3px;
+				font-size: 0.9em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="loginForm">
+			<input type="text" placeholder="username" id="username" />
+			<input type="password" placeholder="password" id="password" />
+			<button onclick="handleLogin()">login</button>
+		</div>
+		<div id="callInterface" style="display: none">
+			<h2 id="user"></h2>
+			<input
+				type="text"
+				id="peerUsername"
+				placeholder="username da chiamare" />
+			<button onclick="startCall()">start Call</button>
+			<button onclick="logout()">logout</button>
+
+			<div id="video"></div>
+		</div>
+
+		<script src="../src/webrtc.js"></script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+# Dipendenze
+node_modules/
+
+# File di build
+dist/
+build/
+
+# File di ambiente
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# File di log
+logs/
+*.log
+
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# Certificati SSL
+*.pem
+*.key
+*.crt
+
+# Cache di sviluppo
+.cache/
+.parcel-cache/
+
+# Editor
+.vscode/
+.idea/
